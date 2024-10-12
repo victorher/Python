@@ -31,4 +31,25 @@ if i_edad < 18:
 else:
     print('Mayor de edad\n')
 
+# generar una función
+def es_mayor_de_edad(edad):
+    """_summary_
 
+    Args:
+        edad (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    if edad >= 18:
+        return True
+    else:
+        return False
+
+# Ejemplo
+edad_usuario = 20
+print('Edad del usuario:', edad_usuario)
+resultado = es_mayor_de_edad(edad_usuario)
+
+# Imprimir el resultado
+print('Es mayor de edad? ', resultado)
