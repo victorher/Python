@@ -2,6 +2,9 @@
 texto = "Primer ejemplo: "
 print(texto + "Hola Mundo")
 
+print("Ingresa un valor")
+a = input()
+
 # Variables
 A = 13
 print("Variable: " + str(A))
