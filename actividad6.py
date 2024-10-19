@@ -88,3 +88,48 @@ def verifica_numero_en_rango(num):
     
 val = int(input('Ingresa un número: '))
 print(verifica_numero_en_rango(val))
+
+####################################################################### 
+print('\nVarificar si un número es positivo o negativo')
+def clasificar_numeros_extendido(lista):
+    conteo = {"positivo_impar": 0, "positivo_par": 0, "negativo_impar": 0, "negativo_par": 0, "cero": 0}
+    for num in lista:
+        if num > 0:
+            if num % 2 == 0:
+                conteo["positivo_par"] += 1
+            else:
+                conteo["positivo_impar"] += 1
+        elif num < 0:
+            if num % 2 == 0:
+                conteo["negativo_par"] += 1
+            else:
+                conteo["negativo_impar"] += 1
+        else:
+            conteo["cero"] += 1
+    return conteo
+
+entrada = input("Introduce una lista de números separados por comas: ")
+lista_numeros = [int(num) for num in entrada.split(",")]
+resultado = clasificar_numeros_extendido(lista_numeros)
+print(resultado) 
+ 
+####################################################################### 
+print('\nCalculo de tarifas')
+def calcular_tarifa_envio():
+    peso = float(input("Introduce el peso del paquete en kg: "))
+    destino = input("¿El envío es internacional? (sí/no): ").strip().lower()
+
+    if peso < 1:
+        costo = 5
+    elif 1 <= peso <= 5:
+        costo = 10
+    else:
+        costo = 20
+
+    if destino == "sí":
+        costo *= 1.5
+
+    return costo
+
+tarifa = calcular_tarifa_envio()
+print(f"La tarifa de envío es: ${tarifa:.2f}")
