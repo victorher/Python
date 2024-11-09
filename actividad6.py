@@ -143,4 +143,29 @@ def calcular_tarifa_envio():
 tarifa = calcular_tarifa_envio()
 if tarifa is not None:
     print(f"La tarifa de envío es: ${tarifa:.2f}")
+    
+    
+# 
+
+print("Cálculo del mayor de tres números")
+
+def mayor_de_tres_numeros():
+    try:
+        
+        numeros = input("Introduce tres números distintos separados por coma: ")
+        lista_numeros = [float(num) for num in numeros.split(",")]
+
+        if len(lista_numeros) != 3:
+            print("Debes introducir exactamente tres números.")
+            return
+
+        if len(set(lista_numeros)) != 3:
+            print("Los números deben ser distintos. Inténtalo de nuevo.")
+            return
+
+        mayor = max(lista_numeros)
+        print(f"El mayor de los tres números es: {mayor}")
+
+    except ValueError:
+        print("Error: Por favor, introduce solo números válidos.")
 
