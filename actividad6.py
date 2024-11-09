@@ -114,22 +114,33 @@ resultado = clasificar_numeros_extendido(lista_numeros)
 print(resultado) 
  
 ####################################################################### 
-print('\nCalculo de tarifas')
+print('\nCálculo de tarifas')
+
 def calcular_tarifa_envio():
-    peso = float(input("Introduce el peso del paquete en kg: "))
-    destino = input("¿El envío es internacional? (sí/no): ").strip().lower()
+    try:
+        peso = float(input("Introduce el peso del paquete en kg: "))
+        if peso < 0:
+            raise ValueError("El peso no puede ser negativo.")
+        
+        destino = input("¿El envío es internacional? (sí/no): ").strip().lower()
 
-    if peso < 1:
-        costo = 5
-    elif 1 <= peso <= 5:
-        costo = 10
-    else:
-        costo = 20
+        if peso < 1:
+            costo = 5
+        elif 1 <= peso <= 5:
+            costo = 10
+        else:
+            costo = 20
 
-    if destino == "sí":
-        costo *= 1.5
+        if destino == "sí":
+            costo *= 1.5
 
-    return costo
+        return costo
+
+    except ValueError as e:
+        print(f"Error: {e}. Por favor, introduce un valor válido.")
+        return None
 
 tarifa = calcular_tarifa_envio()
-print(f"La tarifa de envío es: ${tarifa:.2f}")
+if tarifa is not None:
+    print(f"La tarifa de envío es: ${tarifa:.2f}")
+
