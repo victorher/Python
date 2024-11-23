@@ -1,6 +1,7 @@
+# string
 print("Binebenidos al conversor de millas a kilometros")
 print("Escribe un número en millas")
-millas = input() #string
+millas = input()
 
 print('Millas tipo:', type(millas))
 # convertir un string a nuúmeros
